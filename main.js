@@ -15,8 +15,19 @@
 
 // Divide & Conquer - Pseudocode
     // create function to generate computer choice
+    function getComputerChoice() {
         // create array of options
+        let options = ["rock", "paper", "scissors"];
         // select array options at random
+            // Use Math.random() function to get the random number between(0-1, 1 exclusive).
+            // Multiply it by the array length to get the numbers between(0-arrayLength).
+            // Use Math.floor() to get the index ranging from(0 to arrayLength-1).
+            // Math.floor always rounds down
+        let select = options[Math.floor(Math.random() * options.length)];
+        return select;
+    }
+    
+    console.log(getComputerChoice());
 
     // create function that plays a single round of the game 
         // if playerSelection is rock and computerSelection is scissors
