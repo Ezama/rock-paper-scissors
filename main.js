@@ -120,8 +120,9 @@
             // return or log playRound function
             let result = playRound(playerSelection, computerSelection);
             console.log(result); 
-        }
+        } 
 
+        // new line to separate final result from the rest
         console.log("\n");
 
         // declare winner
