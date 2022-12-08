@@ -31,65 +31,96 @@
 
     // create function that plays a single round of the game 
     function playRound (playerSelection, computerSelection) {
-    // if playerSelection is rock and computerSelection is scissors
-    if (playerSelection === "rock" && computerSelection === "scissors") {
-        // return "You win! rock beats scissors"
-        let message = "You win! rock beats scissors";
-        return message;
+        // if playerSelection is rock and computerSelection is scissors
+        if (playerSelection === "rock" && computerSelection === "scissors") {
+            // return "You win! rock beats scissors"
+            let goodNews = "You win! rock beats scissors";
+            return goodNews;
 
-    // if playerSelection is rock and computerSelection is paper
-    } else if (playerSelection === "rock" && 
-    computerSelection === "paper") {
-        // return "You lose! paper beats rock"
-        let message = "You lose! paper beats rock";
-        return message;
+        // if playerSelection is rock and computerSelection is paper
+        } else if (playerSelection === "rock" && 
+        computerSelection === "paper") {
+            // return "You lose! paper beats rock"
+            let badNews = "You lose! paper beats rock";
+            return badNews;
 
-    // if player selection is paper and computerSelection is rock
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
-        // return "You win! paper beats rock"
-        let message = "You win! paper beats rock";
-        return message;
+        // if player selection is paper and computerSelection is rock
+        } else if (playerSelection === "paper" && computerSelection === "rock") {
+            // return "You win! paper beats rock"
+            let goodNews = "You win! paper beats rock";
+            return goodNews;
 
-    // if playerSelection is paper and computerSelection is scissors
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        // return "You lose! scissors beat paper"
-        let message = "You lose! scissors beat paper";
-        return message;
+        // if playerSelection is paper and computerSelection is scissors
+        } else if (playerSelection === "paper" && computerSelection === "scissors") {
+            // return "You lose! scissors beat paper"
+            let badNews = "You lose! scissors beat paper";
+            return badNews;
 
-    // if player selection is scissors and computerSelection is rock
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        // return "You lose! rock beats scissors"
-        let message = "You lose! rock beats scissors";
-        return message;
+        // if player selection is scissors and computerSelection is rock
+        } else if (playerSelection === "scissors" && computerSelection === "rock") {
+            // return "You lose! rock beats scissors"
+            let badNews = "You lose! rock beats scissors";
+            return badNews;
 
-    // if playerSelection is scissors and computerSelection is paper
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        // return "You win! scissors beat paper"
-        let message = "You win! scissors beat paper";
-        return message;
+        // if playerSelection is scissors and computerSelection is paper
+        } else if (playerSelection === "scissors" && computerSelection === "paper") {
+            // return "You win! scissors beat paper"
+            let goodNews = "You win! scissors beat paper";
+            return goodNews;
 
-    // if playerSelection equals computerSelection 
-    } else /*if (playerSelection === computerSelection)*/ {
-        // return "It is a tie! play again"
-        let message = "It is a tie! play again";
-        return message;
-    }
-
-    // make playerSelection case-insensitive
-
+        // if playerSelection equals computerSelection 
+        } else /*if (playerSelection === computerSelection)*/ {
+            // return "It is a tie! play again"
+            let tie = "It is a tie! play again";
+            return tie;
+        }
 
     }
 
-    // set playerSelection to either rock, paper or scissors
-    const playerSelection = "rock";
-    console.log(`Player Selection: ${playerSelection}`);
+    // // set playerSelection to either rock, paper or scissors
+    // const playerSelection = "rock";
+    // console.log(`Player Selection: ${playerSelection}`);
 
-    // set computerSelection to getComputerChoice function
-    const computerSelection = getComputerChoice();
-    console.log(`Computer Selection: ${computerSelection}`);
+    // // set computerSelection to getComputerChoice function
+    // const computerSelection = getComputerChoice();
+    // console.log(`Computer Selection: ${computerSelection}`);
 
-    //log playRound function into the console
-    console.log(playRound(playerSelection, computerSelection));
+    // //log playRound function into the console
+    // console.log(playRound(playerSelection, computerSelection));
+
+    // new function to play a 5 round game
+    function game () {
+        // declare variables for keeping score
+
+        // iterate over playRound function 5 times
+        for (let i = 0; i < 5; i++) {
+            // use prompt to get playerSelection, the 'toLowerCase()' method makes sure playerSelection is case-insensitive
+            let playerSelection = prompt().toLowerCase();
+            console.log(`Player Selection: ${playerSelection}`);
+
+            // set computerSelection to getComputerChoice function 
+            let computerSelection = getComputerChoice();
+            console.log(`Computer Selection: ${computerSelection}`);
+
+            // return or log playRound function
+            let result = playRound(playerSelection, computerSelection);
+            console.log(result);
+
+            // keep score
+            
+        
+        }
+
+        // declare winner
+
+    }
+
+    game();
+
+
+
+
+
 
 
     
