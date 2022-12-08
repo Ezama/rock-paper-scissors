@@ -29,48 +29,63 @@
     
     //console.log(getComputerChoice());
 
+    //create variable to keep score and assign it a value of 0
+    let score = 0;
+    
     // create function that plays a single round of the game 
     function playRound (playerSelection, computerSelection) {
+
         // if playerSelection is rock and computerSelection is scissors
         if (playerSelection === "rock" && computerSelection === "scissors") {
-            // return "You win! rock beats scissors"
             let goodNews = "You win! rock beats scissors";
+            //increment score
+            score++;
+            // return good news
             return goodNews;
 
         // if playerSelection is rock and computerSelection is paper
         } else if (playerSelection === "rock" && 
         computerSelection === "paper") {
-            // return "You lose! paper beats rock"
             let badNews = "You lose! paper beats rock";
+            //decrement score
+            score--;
+            //return bad news
             return badNews;
 
         // if player selection is paper and computerSelection is rock
         } else if (playerSelection === "paper" && computerSelection === "rock") {
-            // return "You win! paper beats rock"
             let goodNews = "You win! paper beats rock";
+            //increment score
+            score++;
+            // return good news
             return goodNews;
 
         // if playerSelection is paper and computerSelection is scissors
         } else if (playerSelection === "paper" && computerSelection === "scissors") {
-            // return "You lose! scissors beat paper"
             let badNews = "You lose! scissors beat paper";
+            //decrement score
+            score--;
+            // return bad news
             return badNews;
 
         // if player selection is scissors and computerSelection is rock
         } else if (playerSelection === "scissors" && computerSelection === "rock") {
-            // return "You lose! rock beats scissors"
             let badNews = "You lose! rock beats scissors";
+            //decrement score
+            score--;
+            // return bad news
             return badNews;
 
         // if playerSelection is scissors and computerSelection is paper
         } else if (playerSelection === "scissors" && computerSelection === "paper") {
-            // return "You win! scissors beat paper"
             let goodNews = "You win! scissors beat paper";
+            //increment score
+            score++;
+            //return good news
             return goodNews;
 
         // if playerSelection equals computerSelection 
         } else /*if (playerSelection === computerSelection)*/ {
-            // return "It is a tie! play again"
             let tie = "It is a tie! play again";
             return tie;
         }
@@ -104,14 +119,19 @@
 
             // return or log playRound function
             let result = playRound(playerSelection, computerSelection);
-            console.log(result);
-
-            // keep score
-            
-        
+            console.log(result); 
         }
 
+        console.log("\n");
+
         // declare winner
+        if (Math.sign(score) === 1) {
+            console.log("Final Result: YOU WIN!!!");
+        } else if (Math.sign(score) === -1) {
+            console.log("Final Result: YOU LOSE! COMPUTER WINS!!!")
+        } else {
+            console.log("Final Result: IT'S A TIE!!!")
+        }
 
     }
 
