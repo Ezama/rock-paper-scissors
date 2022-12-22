@@ -103,41 +103,8 @@
     // //log playRound function into the console
     // console.log(playRound(playerSelection, computerSelection));
 
-    // new function to play a 5 round game
-    function game () {
-        // declare variables for keeping score
-
-        // iterate over playRound function 5 times
-        for (let i = 0; i < 5; i++) {
-            // use prompt to get playerSelection, the 'toLowerCase()' method makes sure playerSelection is case-insensitive
-            let playerSelection = prompt().toLowerCase();
-            console.log(`Player Selection: ${playerSelection}`);
-
-            // set computerSelection to getComputerChoice function 
-            let computerSelection = getComputerChoice();
-            console.log(`Computer Selection: ${computerSelection}`);
-
-            // return or log playRound function
-            let result = playRound(playerSelection, computerSelection);
-            console.log(result); 
-        } 
-
-        // new line to separate final result from the rest
-        console.log("\n");
-
-        // declare winner
-        if (Math.sign(score) === 1) {
-            console.log("Final Result: YOU WIN!!!");
-        } else if (Math.sign(score) === -1) {
-            console.log("Final Result: YOU LOSE! COMPUTER WINS!!!")
-        } else {
-            console.log("Final Result: IT'S A TIE!!!")
-        }
-
-    }
-
-    game();
-
+    
+    
 
 
 
